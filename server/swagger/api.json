@@ -1,0 +1,378 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Gateway MERN (MongoDB, ExpressJS, React, NodeJS).",
+    "description": "Simple and extensible API for managing gateways.",
+    "contact": {
+      "email": "adriangonzalezsanchez1996@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Gateway",
+      "description": "Operations about gateways"
+    }
+  ],
+  "paths": {
+    "/gateway/list": {
+      "get": {
+        "tags": [
+          "gateway"
+        ],
+        "summary": "Get list of gateways",
+        "operationId": "getGateways",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Gateway"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/create": {
+      "post": {
+        "tags": [
+          "gateway"
+        ],
+        "summary": "Create a gateway",
+        "operationId": "createGateway",
+        "requestBody": {
+          "description": "Created gateway object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Gateway"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Gateway created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Gateway"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/details/{id}": {
+      "get": {
+        "tags": [
+          "gateway"
+        ],
+        "summary": "Get details of gateway",
+        "operationId": "detailsGateway",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the gateway",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Gateway retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Gateway"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Gateway was not found"
+          }
+        }
+      }
+    },
+    "/gateway/delete/{id}": {
+      "delete": {
+        "tags": [
+          "gateway"
+        ],
+        "summary": "Delete a gateway",
+        "operationId": "deleteGateway",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the gateway",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Gateway deleted successfully"
+          },
+          "400": {
+            "description": "Gateway was not found"
+          }
+        }
+      }
+    },
+    "/device/list": {
+      "get": {
+        "tags": [
+          "device"
+        ],
+        "summary": "Get list of devices",
+        "operationId": "getDevices",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Device"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/device/create": {
+      "post": {
+        "tags": [
+          "device"
+        ],
+        "summary": "Create a device",
+        "operationId": "createDevice",
+        "requestBody": {
+          "description": "Created device object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Device"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Gateway created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Device"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/device/details/{id}": {
+      "get": {
+        "tags": [
+          "device"
+        ],
+        "summary": "Get details of device",
+        "operationId": "detailsDevice",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the device",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Device retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Device"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Device was not found"
+          }
+        }
+      }
+    },
+    "/device/delete/{id}": {
+      "delete": {
+        "tags": [
+          "device"
+        ],
+        "summary": "Delete a device",
+        "operationId": "deleteDevice",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the device",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Device deleted successfully"
+          },
+          "400": {
+            "description": "Device was not found"
+          }
+        }
+      }
+    },
+    "/device/removeFromGateway/{id}": {
+      "get": {
+        "tags": [
+          "device"
+        ],
+        "summary": "Remove this device from it's gateway device list",
+        "operationId": "removeDevice",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the device",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Device was successfully removed"
+          },
+          "400": {
+            "description": "Device was not Found"
+          }
+        }
+      }
+    },
+    "/device/addToGateway/{id}": {
+      "post": {
+        "tags": [
+          "device"
+        ],
+        "summary": "Add this device to the suplied gateway's devices list",
+        "operationId": "addDevice",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the device",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Gateway id",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Device was successfully added to the gateway's list."
+          },
+          "400": {
+            "description": "Device was not found."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Gateway": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "serialNumber": {
+            "type": "integer"
+          },
+          "ipv4": {
+            "type": "string",
+            "format": "xxx.xxx.xxx.xxx"
+          },
+          "devices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Device"
+            }
+          }
+        }
+      },
+
+      "Payload": {
+          "type": "object",
+          "properties": {
+              "id": {
+                  "type": "integer"
+              }
+          }
+      },
+
+      "Device": {
+        "type": "object",
+        "properties": {
+          "vendor": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "format": "(online) | (offline)"
+          },
+          "uid": {
+            "type": "integer"
+          },
+          "date": {
+            "type": "string",
+            "format": "dd/mm/yyyy"
+          },
+          "gateway": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}
