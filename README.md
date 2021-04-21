@@ -72,7 +72,7 @@ These commands installs all the dependencies needed for the server to run, after
 Once the server is running, we can access http://localhost:3000/api-docs 
 where there is a web documentation powered by swagger, where all the API endpoints are listed and can be tested through requests. Also, Postman can be used to test the API too.
 
-![images/Screenshot from 2021-04-08 09-22-50.png]()
+![](./images/1.png)
 
 ## Running the frontend
 I shipped a very basic UI to interact with these endpoints. It is build with react and settin it up is as easy as:
