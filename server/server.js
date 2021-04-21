@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import express from 'express';
 import loaders from './loaders';
 import configRoutes from './routes';
