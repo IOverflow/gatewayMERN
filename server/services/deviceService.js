@@ -1,5 +1,4 @@
-import DeviceModel from "../models/deviceModel";
-import DataAccessService from "./baseService";
+import DataAccessService from "./baseService.js";
 
 
 export default class DeviceService extends DataAccessService {

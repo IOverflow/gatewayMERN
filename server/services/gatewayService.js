@@ -1,4 +1,4 @@
-import DataAccessService from "./baseService";
+import DataAccessService from "./baseService.js";
 
 
 export default class GatewayService extends DataAccessService {

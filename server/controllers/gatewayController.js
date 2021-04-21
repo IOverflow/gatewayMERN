@@ -1,4 +1,4 @@
-import CrudController from './controller';
+import CrudController from './controller.js';
 
 /**
     App endpoints for CRUD operations related to

@@ -1,5 +1,5 @@
-import deviceRouter from './deviceRouter';
-import gatewayRouter from './gatewayRouter';
+import deviceRouter from './deviceRouter.js';
+import gatewayRouter from './gatewayRouter.js';
 
 export default ({ expressApp, appContainer }) => {
     expressApp.use("/gateway", gatewayRouter(appContainer));

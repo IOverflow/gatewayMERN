@@ -1,4 +1,4 @@
-import logger from "../services/logginService";
+import logger from "../services/logginService.js";
 
 export default class CrudController {
     constructor(service) {

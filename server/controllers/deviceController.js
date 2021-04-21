@@ -1,4 +1,4 @@
-import CrudController from "./controller";
+import CrudController from "./controller.js";
 
 
 export default class DeviceController extends CrudController {

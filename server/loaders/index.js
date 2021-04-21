@@ -1,5 +1,5 @@
-import expressLoader from './expressLoader';
-import mongooseLoader from './mongooseLoader';
+import expressLoader from './expressLoader.js';
+import mongooseLoader from './mongooseLoader.js';
 
 
 export default async ({

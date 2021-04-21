@@ -1,7 +1,9 @@
-import {
+import pkg from 'mongoose'
+
+const {
     model,
     Schema
-} from "mongoose";
+} = pkg;
 
 const DeviceSchema = new Schema({
     uid: Number,

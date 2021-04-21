@@ -1,12 +1,15 @@
 #! /usr/bin/env node
 
 import express from 'express';
-import loaders from './loaders';
-import configRoutes from './routes';
-import setupContainer from './config/dependencyInjectionLoader';
+import loaders from './loaders/index.js';
+import configRoutes from './routes/index.js';
+import setupContainer from './config/dependencyInjectionLoader.js';
 import cors from 'cors';
 import swaggerUi from "swagger-ui-express";
-import swaggerDocument from "./swagger/api.json";
+import pkg from 'module';
+const { createRequire } = pkg;
+const require = createRequire(import.meta.url);
+const swaggerDocument = require("./swagger/api.json");
 
 
 const app = express();

@@ -6,7 +6,7 @@
  * the services that every Entity will need.
  */
 
-import GatewayModel from "../models/gatewayModel";
+import GatewayModel from "../models/gatewayModel.js";
 
 export default class DataAccessService {
     constructor(
