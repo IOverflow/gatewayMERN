@@ -13,7 +13,7 @@
   "scripts": {
     "test": "jest --detectOpenHandles --forceExit",
     "start:dev": "nodemon server.js",
-    "start": "./server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Adrian Gonzalez <adriangonzalezsanchez1996@gmail.com>",
